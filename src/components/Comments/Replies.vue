@@ -3,32 +3,32 @@
     <article class="uk-comment">
       <header class="uk-comment-header">
           <img class="uk-comment-avatar" :src="" alt="">
-          <h4 class="uk-comment-title"> {{ reply.author_name }}</h4>
-          <div class="uk-comment-meta">parent : {{ reply.date }}</div>
+          <h4 class="uk-comment-title">Ici il y a un commentaire</h4>
+          <div class="uk-comment-meta"> {{ reply.author_name }} - {{ reply.id }} - {{ reply.parent }}</div>
       </header>
-      <div class="uk-comment-body"></div>
+      <div class="uk-comment-body"> {{{ reply.content.rendered }}} </div>
     </article>
   </li>
+  <replies :reply="reply" v-for="reply in byparent"></replies>
 </template>
 
 <script type="text/babel">
+    var _ = require('lodash')
+
     export default {
-      name: 'comment',
+      name: 'replies',
       props: {
-        ip: String,
-        truc: Object,
-        parent: Number
+        reply: Object
       },
-      data () {
-        return {
-          comments: []
+      computed: {
+        byparent: function () {
+          let bp = _.filter(this.replies, { 'parent': this.reply.id })
+          return bp
         }
       }
     }
 </script>
 
 <style>
-.uk-comment {
-  margin-bottom: 3em;
-}
+
 </style>

@@ -2,30 +2,37 @@
   <li>
     <article class="uk-comment">
       <header class="uk-comment-header">
-          <img class="uk-comment-avatar" :src="truc.author_avatar_urls['48']" alt="">
-          <h4 class="uk-comment-title"> {{ truc.author_name }}</h4>
-          <div class="uk-comment-meta"> {{ truc.date }} - {{ ip }}</div>
+          <img class="uk-comment-avatar" :src="" alt="">
+          <h4 class="uk-comment-title">Titre du commentaire</h4>
+          <div class="uk-comment-meta"> {{ comment.author_name }} - {{ comment.date_gmt }} - {{ comment.id }}</div>
       </header>
-      <div class="uk-comment-body">{{{ truc.content.rendered }}}</div>
+      <div class="uk-comment-body"> {{{ comment.content.rendered }}}</div>
     </article>
-    <replies :parent="truc.id" v-for="reply in replies | filterBy truc.id in 'id'"></replies>
+    <ul>
+      <replies :reply="reply" v-for="reply in byparent"></replies>
+    </ul>
   </li>
 </template>
 
 <script type="text/babel">
   import Replies from './Replies.vue'
+  var _ = require('lodash')
 
   export default {
-    name: 'comment',
-    components: { Replies },
-    props: {
-      ip: String,
-      truc: Object,
-      replies: Array
-    },
     data () {
       return {
-        comments: []
+        a: 1
+      }
+    },
+    components: { Replies },
+    props: {
+      comment: Object,
+      replies: Array
+    },
+    computed: {
+      byparent: function () {
+        let bp = _.filter(this.replies, { 'parent': this.comment.id })
+        return bp
       }
     }
   }

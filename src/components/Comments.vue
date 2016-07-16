@@ -1,7 +1,7 @@
 <template>
   <div class="comments">
     <ul class="uk-comment-list">
-      <comment :truc="truc" :replies="replies" v-for="truc in comments" track-by="id" transition="stagger" stagger="100"></comment>
+      <comment :comment="comment" :replies="replies" v-for="comment in comments" track-by="id" transition="stagger" stagger="100"></comment>
     </ul>
   </div>
 </template>
@@ -13,17 +13,15 @@
     data () {
       return {
         comments: [],
-        replies: [],
-        truc: {
-          1: 'oui',
-          2: 'non'
-        }
+        replies: []
       }
     },
     components: { Comment },
     props: {
       id: Number,
       model: String,
+      crsf: String,
+      comment: Object,
       ip: String
     },
     ready: function () {
