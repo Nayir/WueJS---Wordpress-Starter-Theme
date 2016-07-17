@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueResource from 'vue-resource'
-import Comments from './components/Comments.vue'
+import App from './App.vue'
 
 Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
-  components: { Comments }
+  components: { App }
 })

@@ -16,6 +16,7 @@
         replies: []
       }
     },
+    name: 'comments',
     components: { Comment },
     props: {
       id: Number,
