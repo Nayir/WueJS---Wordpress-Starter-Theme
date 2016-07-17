@@ -22,7 +22,8 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/comments' : 'http://localhost/wordpress/wp-json/wp/v2'
+      '/comments' : 'http://localhost/wordpress/wp-json/wp/v2',
+      '/posts' : 'http://localhost/wordpress/wp-json/wp/v2'
     }
   }
 }
