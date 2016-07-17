@@ -2,6 +2,9 @@
 
 > A Vue Theme using Webpack for Wordpress
 
+## Version
+0.3
+
 ## Build Setup
 
 ``` bash
