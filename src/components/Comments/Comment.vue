@@ -3,13 +3,13 @@
     <article class="uk-comment">
       <header class="uk-comment-header">
           <img class="uk-comment-avatar" :src="" alt="">
-          <h4 class="uk-comment-title">Titre du commentaire</h4>
-          <div class="uk-comment-meta"> {{ comment.author_name }} - {{ comment.date_gmt }} - {{ comment.id }}</div>
+          <h4 class="uk-comment-title"> Commentaire de {{ comment.author_name }} </h4>
+          <div class="uk-comment-meta"> Ecrit le {{ comment.date_gmt }} dont l'id est {{ comment.id }}</div>
       </header>
       <div class="uk-comment-body"> {{{ comment.content.rendered }}}</div>
     </article>
     <ul>
-      <replies :reply="reply" v-for="reply in byparent"></replies>
+      <replies :reply="reply" v-for="reply in byparent" :replies="replies"></replies>
     </ul>
   </li>
 </template>
