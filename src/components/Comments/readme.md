@@ -2,15 +2,18 @@ Comments Module
 
 # Tags
 
-## Comments - <comments></comments>
+## Comments
+'<comments></comments>'
 Use it for displaying all comments, specific comments, or even replies
 
-## Comment - <comment></comment>
+## Comment
+'<comment></comment>'
 Comment formatting
 
-## Replies - <replies></replies>
+## Replies
+'<replies></replies>'
 Replies for the parent comment
-> 2nd degree depth in 0.1
+> 2nd degree depth in 0.2
 
 
 ### Task List
