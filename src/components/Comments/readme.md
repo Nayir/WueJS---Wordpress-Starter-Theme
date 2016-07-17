@@ -3,15 +3,21 @@ Comments Module
 # Tags
 
 ## Comments
-'<comments></comments>'
+```html
+<comments></comments>
+```
 Use it for displaying all comments, specific comments, or even replies
 
 ## Comment
-'<comment></comment>'
+```html
+<comment></comment>
+```
 Comment formatting
 
 ## Replies
-'<replies></replies>'
+```html
+<replies></replies>
+```
 Replies for the parent comment
 > 2nd degree depth in 0.2
 
