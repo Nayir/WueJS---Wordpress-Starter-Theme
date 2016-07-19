@@ -26,7 +26,7 @@
       } else {
         param = ''
       }
-      this.$http.get('/wordpress/wp-json/wp/v2/posts' + param).then((response) => {
+      this.$http.get('/wp-json/wp/v2/posts' + param).then((response) => {
         this.$set('posts', response.json())
       }, (response) => {
         console.log('error with vue-resource for getting posts')

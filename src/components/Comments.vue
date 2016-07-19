@@ -29,13 +29,13 @@
     },
     ready: function () {
       // GET first parent comments
-      this.$http.get('/wordpress/wp-json/wp/v2/comments').then((response) => {
+      this.$http.get('/wp-json/wp/v2/comments').then((response) => {
         this.$set('comments', response.json())
       }, (response) => {
         console.log('error with vue-resource')
       })
       // GET replies of comments
-      this.$http.get('/wordpress/wp-json/wp/v2/comments?parent_exclude=0').then((response) => {
+      this.$http.get('/wp-json/wp/v2/comments?parent_exclude=0').then((response) => {
         this.$set('replies', response.json())
       }, (response) => {
         console.log('error with vue-resource')
