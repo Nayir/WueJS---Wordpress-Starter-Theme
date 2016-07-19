@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Application</h1>
+    <h1>{{ $route.title }}</h1>
       <router-view></router-view>
   </div>
 </template>
