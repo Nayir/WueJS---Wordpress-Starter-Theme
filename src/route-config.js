@@ -1,6 +1,5 @@
 export function configRouter (router) {
   // normal routes
-  console.log(document.location.origin)
   router.map({
     '/': {
       // the component can also be a plain string component id,
