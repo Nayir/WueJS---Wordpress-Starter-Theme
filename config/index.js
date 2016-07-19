@@ -8,6 +8,7 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // Wordpress Production Mode assetsPublicPath: '<?php echo get_bloginfo(\'url\'); ?>/wp-content/themes/vuetheme/dist/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -22,8 +23,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/comments' : 'http://localhost/wordpress/wp-json/wp/v2',
-      '/posts' : 'http://localhost/wordpress/wp-json/wp/v2'
+       '/wordpress' : 'http://localhost/'
     }
   }
 }

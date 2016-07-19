@@ -1,5 +1,7 @@
 <template>
-  <post :post="post" v-for="post in posts" track-by="id" transition="stagger" stagger="100" ></post>
+  <div>
+    <post :posts="posts"></post>
+  </div>
 </template>
 
 <script type="text/babel">
@@ -14,15 +16,17 @@
     name: 'posts',
     components: { Post },
     props: {
-      id: Number,
-      model: String,
-      crsf: String,
-      comment: Object,
-      ip: String
+      id: [String, Number],
+      model: String
     },
     ready: function () {
-      // GET first parent comments
-      this.$http.get('/posts').then((response) => {
+      if (this.id) {
+        var param = '?include=' + this.id
+        console.log(param)
+      } else {
+        param = ''
+      }
+      this.$http.get('/wordpress/wp-json/wp/v2/posts' + param).then((response) => {
         this.$set('posts', response.json())
       }, (response) => {
         console.log('error with vue-resource for getting posts')
