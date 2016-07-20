@@ -3,7 +3,7 @@
 > A Vue Theme using Webpack for Wordpress
 
 ## Version
-0.3
+1.1
 
 ## Build Setup
 

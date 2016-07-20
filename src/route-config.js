@@ -1,38 +1,36 @@
 export function configRouter (router) {
   // normal routes
   router.map({
+    // Home
     '/': {
-      // the component can also be a plain string component id,
-      // but a component with that id must be available in the
-      // App component's scope.
       component: require('./components/Hello.vue'),
-      title: 'Admin panel'
+      title: 'Home'
     },
-    '/disto': {
-      // the component can also be a plain string component id,
-      // but a component with that id must be available in the
-      // App component's scope.
-      component: require('./components/Disto.vue'),
-      title: 'Disto'
+    // Pages
+    '/:id': {
+      component: require('./components/Page.vue')
     },
-    '/thecomments': {
-      // the component can also be a plain string component id,
-      // but a component with that id must be available in the
-      // App component's scope.
+    // Comments
+    '/comments': {
       component: require('./components/Comments.vue'),
       title: 'List of all Comments'
     },
-    '/theposts': {
-      // the component can also be a plain string component id,
-      // but a component with that id must be available in the
-      // App component's scope.
+    // All Posts
+    '/posts': {
       component: require('./components/Posts.vue'),
       title: 'List of all Posts'
     },
+    // Single Post
+    '/posts/:id': {
+      component: require('./components/SinglePost.vue')
+    },
+    // Page Test - Better Priority than :id on Pages
+    '/disto': {
+      component: require('./components/Disto.vue'),
+      title: 'Disto'
+    },
+    // 404 Error
     '*': {
-      // the component can also be a plain string component id,
-      // but a component with that id must be available in the
-      // App component's scope.
       component: require('./components/not-found.vue'),
       title: 'Error 404'
     }

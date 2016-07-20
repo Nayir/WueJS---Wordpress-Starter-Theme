@@ -7,7 +7,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '<?php echo get_bloginfo(\'template_url\'); ?>/dist/',
+    assetsPublicPath: '<?php echo get_bloginfo(\'template_url\'); ?>/',
     productionSourceMap: true,
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
@@ -23,7 +23,8 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
        '/wp-json/wp/v2/comments': 'http://localhost',
-       '/wp-json/wp/v2/posts': 'http://localhost'
+       '/wp-json/wp/v2/posts': 'http://localhost',
+       '/wp-json/wp/v2/page': 'http://localhost'
     }
   }
 }

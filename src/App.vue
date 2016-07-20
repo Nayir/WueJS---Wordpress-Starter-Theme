@@ -8,11 +8,13 @@
 <script type="text/babel">
   import Comments from './components/Comments.vue'
   import Posts from './components/Posts.vue'
+  import Page from './components/Page.vue'
 
   export default {
     components: {
       Comments,
-      Posts
+      Posts,
+      Page
     }
   }
 </script>

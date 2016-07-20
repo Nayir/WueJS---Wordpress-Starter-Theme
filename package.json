@@ -1,6 +1,6 @@
 {
   "name": "vuetheme",
-  "version": "1.0.0",
+  "version": "1.1",
   "description": "A Vue Theme using Webpack for Wordpress",
   "author": "Nayir <nayir.chami@gmail.com>",
   "private": true,
