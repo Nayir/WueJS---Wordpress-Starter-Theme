@@ -1,3 +1,6 @@
+# WARNING
+This version is no longer maintained. It's run on a oldest version of Vuejs (1.0). 
+
 # vuetheme
 
 > A Vue Theme using Webpack for Wordpress
@@ -28,6 +31,3 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-##TODO
-- [ ] Bind the app to html for dynamic title
