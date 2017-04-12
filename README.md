@@ -1,5 +1,6 @@
 # WARNING
 This version is no longer maintained. It's run on a oldest version of Vuejs (1.0). 
+Next Release on VueJS2 on may or june 2017
 
 # vuetheme
 
